@@ -227,6 +227,7 @@ func HeapSort(arr []int) {
 
 
 //堆化 自下而上的堆化 /叶子节点k,与父节点k/2,以及k+1节点比较取大的值来替换，当k无替换则交换结束,将元素构建堆化
+//将元素逐个堆化
 func Sink(arr []int){
 	for i := 0; i < len(arr); i++{
 		if i <= 0 {
@@ -265,6 +266,7 @@ func HeapSorts(s []int) {
     p(s)
 }
 //自上而下堆化
+//因为叶子节点往下堆化只能自己跟自己比较，所以我们直接从第一个非叶子节 点开始，依次堆化就行了
 func sink(s []int, k, N int) {
     for {
         i := 2 * k
